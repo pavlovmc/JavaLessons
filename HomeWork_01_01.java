@@ -1,6 +1,6 @@
 package Java_01.Lesson_01;
 
-public class HomeWork {
+public class HomeWork_01_01 {
 
     public static void main(String[] args){
         /*
