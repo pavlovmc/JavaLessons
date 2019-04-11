@@ -22,22 +22,31 @@ public class HomeWork_01_04 {
 
     static private void standardGame(){
         char[][] standardField = new char[SIZE_X][SIZE_Y];
+        boolean win;
         initField(standardField);
         printField(standardField);
         do {
             playerTurn(standardField);
             printField(standardField);
-            if(checkWinner(standardField, PLAYER_DOT)){
+            win = checkWinner(standardField, PLAYER_DOT);
+            if(win){
                 System.out.println("Ты выиграл!");
+                break;
+            }
+            if(isFull(standardField)) {
                 break;
             }
             cpuTurn(standardField);
             printField(standardField);
-            if(checkWinner(standardField, CPU_DOT)){
+            win = checkWinner(standardField, CPU_DOT);
+            if(win){
                 System.out.println("Компьютер выиграл!");
                 break;
             }
         } while (!isFull(standardField));
+        if(!win) {
+            System.out.println("Ничья!");
+        }
 
     }
 
